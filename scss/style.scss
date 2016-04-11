@@ -22,12 +22,6 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
-
-@font-face {
-    font-family: 'PhosphateSolid';
-    src: url('../fonts/PhosphateSolid.ttf');
-}
-
 /***** TAG STYLES *************/
 /**********************************/
 body{
@@ -36,6 +30,21 @@ body{
 	}
     h1,h2,{
         margin:0;
+        font-family:'Alegreya', serif;
+        font-weight: 900;
+    }
+    h2{
+         font-size: 1em;
+         font-weight: 400;
+    }
+    h3{
+        margin: 0.5em;
+        font-family: serif;
+    }
+    p{
+        line-height: 1.5em;
+        font-family: serif;
+        font-size: 1.2em;
     }
 }
 
@@ -60,38 +69,67 @@ body{
         margin:0 auto;
         max-width: 360px;
     }
-    h1{
-        font-family: 'PhosphateSolid';
-    }
 }
 .main{
     width: 90%;
-    padding-top:6em;
+    padding-top:3em;
     max-width: 1100px;
     margin:0 auto;
     .main-text{
-        width:80%;
-        margin:0 auto; 
+        width:90%;
+        margin:3em auto; 
         text-align: center;
         h1{
         }
         p{
-
+            width: 80%;
+            margin: 1.5em auto;
+            max-width: 800px;
+            text-align:center;
         }
     }
-    div{
+    .profile-container{
         text-align:center;
-        img{
-            width:200px;
-            margin:0 auto;
-            border-radius:10px;
-        }
+        position:relative;
+        .profile{
+            padding-bottom:6em;
+            &:last-child{
+                padding-bottom:2em;
+            }
+            .border{
+                background: url(../img/border.png);
+                position:absolute;
+                height: 500px;
 
+            }
+        }
+        .profile-image{
+            width: 60%;
+            max-width:250px;
+            margin:0 auto;
+            z-index:1;
+        }
     }
+    .social{
+        width: 100%;
+        margin:0 auto;
+        text-align:center;
+        a{
+            display:inline-block;
+            color:black;
+            opacity: 0.75;
+            &:hover{
+                opacity:1;
+            }
+        }
+    }
+}
+.picture-roll-container{
+    width:100%;
 }
 .picture-roll{
     background: url(../img/picture-roll.jpg);
-    height: 360px;
+    height: 250px;
 }
 
 footer{
@@ -101,26 +139,40 @@ footer{
     img{
         width:50%;
         max-width:200px;
+        padding-top:3em;
+        margin:0 auto;
     }
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 550px) {
     
-    .profiles{
-
-        div{
-            width: 45%;
+    .profile-container{
+        .profile{
+            padding-bottom: 6em;
+            width:49%;
             display: inline-block;
+        }
+        .profile-image{
+            width: 100%;
+            max-width:200px;
+            margin:0 auto;
+            z-index:1;
         }
     }
 }
 @media screen and (min-width: 860px) {
     
-    .profiles{
-
-        div{
-            width: 32%;
+    .profile-container{
+        .profile{
+            padding-bottom: 8em;
+            width:32%;
             display: inline-block;
+        }
+        .profile-image{
+            width: 100%;
+            max-width:180px;
+            margin:0 auto;
+            z-index:1;
         }
     }
 }
